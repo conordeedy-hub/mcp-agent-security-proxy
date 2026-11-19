@@ -1,0 +1,30 @@
+{
+  "policy_version": "1.0-NIST-RMF",
+  "allowed_tools": [
+    "query_customer_db",
+    "export_audit_csv",
+    "send_status_email"
+  ],
+  "blocked_sql_keywords": [
+    "DROP",
+    "DELETE",
+    "TRUNCATE",
+    "ALTER",
+    "UPDATE",
+    "GRANT"
+  ],
+  "prompt_injection_patterns": [
+    "ignore previous instructions",
+    "system override",
+    "bypass policy",
+    "reveal system prompt",
+    "exfiltrate"
+  ],
+  "pii_regex_patterns": {
+    "ssn": "\\b\\d{3}-\\d{2}-\\d{4}\\b",
+    "credit_card": "\\b(?:\\d[ -]*?){13,16}\\b"
+  },
+  "require_human_approval_tools": [
+    "send_status_email"
+  ]
+}
